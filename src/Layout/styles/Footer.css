@@ -1,0 +1,35 @@
+.footer, .footer-black {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    background-color: var(--color-red);
+}
+.footer-black {
+    height: 50px;
+    width: 100%;
+    background-color: #000;
+}
+.footer-circle {
+    position: absolute;
+    width: 70px;
+    aspect-ratio: 1;
+    background-color: #fff;
+    border: 9px solid #000;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.footer-cirlce-int {
+    position: absolute;
+    width: 35px;
+    aspect-ratio: 1;
+    border: 6px solid #000;
+    background-color: rgb(34, 34, 34);
+    border-radius: 50%;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
