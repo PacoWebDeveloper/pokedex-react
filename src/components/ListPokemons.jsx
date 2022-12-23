@@ -1,13 +1,14 @@
 import React from 'react'
 import PokemonCard from './PokemonCard'
+import './styles/ListPokemons.css'
 
 const ListPokemons = ({pokemons}) => {
   return (
-    <ul>
+    <section className='list-pokemon'>
         {
             pokemons.map((pokemon) => <PokemonCard key={pokemon.url} pokemon={pokemon} />)
         }
-    </ul>
+    </section>
   )
 }
 

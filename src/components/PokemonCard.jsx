@@ -20,18 +20,19 @@ const PokemonCard = ({pokemon}) => {
       <section className='pokeCard-header'></section>
       <section className='pokecard-content'>
         <img src={dataPokemon?.sprites.other["official-artwork"].front_default} alt="" className='pokeCard-img'/>
-        <h3>{pokemon.name}</h3>
+        <h3 className='pokeCard-name'>{pokemon.name}</h3>
         <p className="pokeCard-types">{types}</p>        
         <p className="pokeCard-types-title">Type</p>
         <hr />
         <section className='pokeCard-stats'>
           {
-            
+            dataPokemon?.stats.map(stat => (
+              <div className="pokeCard-stat">
+                <p className='pokeCard-stat-name'>{stat.stat.name}</p>
+                <p className='pokeCard-stat-value'>{stat.base_stat}</p>
+              </div>
+            ))
           }
-          <div className="pokeCard-stat">
-            <p className='pokeCard-stat-name'></p>
-            <p className='pokeCard-stat-value'></p>
-          </div>
         </section>
       </section>
     </article>
