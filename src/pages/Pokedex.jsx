@@ -4,14 +4,17 @@ import axios from 'axios'
 import { useState } from 'react'
 import ListPokemons from '../components/ListPokemons'
 import './styles/Pokedex.css'
+import { paginationLogic } from '../helpers/paginationLogic'
 
 const pokedex = () => {
 
   const [pokemons, setPokemons] = useState([])
+  const [pokemonFilter, setPokemonFilter] = useState([])
   const [types, setTypes] = useState([])
   const [namePokemon, setNamePokemon] = useState('')
-  const [pokemonFilter, setPokemonFilter] = useState([])
   const [pokemonType, setPokemonType] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+
 
   const nameTrainer = useSelector(state => state.nameTrainer)
 
@@ -23,6 +26,38 @@ const pokedex = () => {
 
   const handleChangeSelect = (e) => {
    setPokemonType(e.target.value)
+  }
+
+  const { lastPage, pagesInBlock, pokemonsInPage} = paginationLogic(currentPage, pokemonFilter)
+
+  const handleClickPage = (newPage) => {
+    setCurrentPage(newPage)
+  }
+
+  const handleNextPage = () => {
+    const newPage = currentPage + 1
+    if (newPage > lastPage) {
+      setCurrentPage(1)
+    } else {
+      setCurrentPage(newPage  )
+    }
+  }
+
+  const handlePreviousPage = () => {
+    const newPage = currentPage - 1
+    if (newPage < 1) {
+      setCurrentPage(lastPage)
+    } else {
+      setCurrentPage(newPage)
+    }
+  }
+
+  const handleFirstPage = () => {
+    setCurrentPage(1)
+  }
+
+  const handleLastPage = () => {
+    setCurrentPage(lastPage)
   }
 
   useEffect(() => {
@@ -53,13 +88,13 @@ const pokedex = () => {
 
   return (
       <main>
-        <header>
+        <header className='pokedex-header'>
           <h1>Pokedex</h1>
           <p>Welcome <span>{nameTrainer}</span>, here you can find your favorite pokemon</p>
           <form onSubmit={handleSubmit} className='pokedex-form'>
             <div className="pokedex-search">
-              <input type="text" id='namePokemon'/>
-              <button type='submit'>Search</button>
+              <input className='pokedex-input' type="text" id='namePokemon'/>
+              <button className='pokedex-btn' type='submit'>Search</button>
             </div>
             <select onChange={handleChangeSelect} className="pokedex-select">
               <option value="">All pokemons</option>
@@ -69,7 +104,16 @@ const pokedex = () => {
             </select>
           </form>
         </header>
-        <ListPokemons pokemons={pokemonFilter} />
+        <ListPokemons pokemons={pokemonsInPage} />
+        <ul className='pokedex-listPages'>
+          <li onClick={() => handlePreviousPage()}>{"<"}</li>
+          <li onClick={handleFirstPage}>...</li>
+          {
+            pagesInBlock.map(pageInBlock => <li className={currentPage === pageInBlock ? "actualPage" : ""} onClick={() => handleClickPage(pageInBlock)} key={pageInBlock}>{pageInBlock}</li>)
+          }
+          <li onClick={() => handleLastPage()}>...</li>
+          <li onClick={() => handleNextPage()}>{">"}</li>
+        </ul>
       </main>
   )
 }
