@@ -10,6 +10,11 @@ const Pokemon = () => {
 
   const {id} = useParams()
 
+  const getPercentBarProgress = (valueStat) => {
+    const maxValue = 150
+    return `${(valueStat * 100) / maxValue}%`
+  }
+
   useEffect(() => {
     const URL = `https://pokeapi.co/api/v2/pokemon/${id}/`
     axios.get(URL)
@@ -19,7 +24,7 @@ const Pokemon = () => {
   return (
     <main className='Pokemon'>
       <section className='pokemonId'>
-        <section className='pokemonId-header'></section>
+        <section className={`pokemonId-header bg-lg-${dataPokemon?.types[0].type.name}`}></section>
         <img className='pokeminId-img' src={dataPokemon?.sprites.other["official-artwork"].front_default} alt={dataPokemon?.name} />
         <h3 className='pokemonId-id'># {dataPokemon?.id}</h3>
         <h2 className='pokemonId-name'>{dataPokemon?.name}</h2>
@@ -38,7 +43,7 @@ const Pokemon = () => {
             <h4 className='pokemonId-info-title'>Types</h4>
             <div className='pokemonId-info-data'>
               {
-                dataPokemon?.types.map(type => <p className='pokemonId-info-value' key={type.type.name}>{type.type.name}</p>)
+                dataPokemon?.types.map(type => <p className={`pokemonId-info-value bg-${type.type.name}`} key={type.type.name}>{type.type.name}</p>)
               }
             </div>
           </div>
@@ -56,12 +61,12 @@ const Pokemon = () => {
           <div className='pokemonId-stats-container'>
             {
               dataPokemon?.stats.map(stat => (
-                <div className="pokemonId-stat">
+                <div className="pokemonId-stat" key={stat.name}>
                   <div className='pokemonId-stat-header'>
                     <p className="pokemonId-stat-name">{stat.stat.name}</p>
                     <p className='pokemonId-stat-value'>{stat.base_stat}</p>
                     <div className="pokemonId-stat-bar">
-                      <div className="pokemonId-stat-barProgress"></div>
+                      <div style={{width: getPercentBarProgress(stat.base_stat)}} className="pokemonId-stat-barProgress"></div>
                     </div>
                   </div>
                 </div>
