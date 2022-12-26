@@ -1,3 +1,123 @@
+.pokeCard {
+    text-align: center;
+    background-color: #fff;
+    border: 10px solid #000;
+    border-radius: 10px;
+    width: min(270px, 100%);
+    cursor: pointer;
+    transition: 300ms transform ease;
+}
+.pokeCard:hover {
+    transform: scale(1.02);
+}
+.pokeCard-header {
+    height: 170px;
+    background: linear-gradient(180deg, #000, #fff);
+}
+.pokecard-content {
+    position: relative;
+}
+.pokeCard-img {
+    width: 200px;
+    position: absolute;
+    padding: 10px 20px;
+    top: 0;
+    left: calc(50% - 100px);
+    transform: translateY(-85%);
+}
+.pokeCard-name {
+    padding-top: 15px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
 .pokeCard-types {
     text-transform: capitalize;
+    margin: 4px 0;
+}
+.pokeCard-types-title {
+    color: #9f9f9f;
+    font-size: 15px;
+    margin-top: 0;
+}
+.pokeCard-stats {
+    display: grid;
+    grid-auto-rows: 60px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.pokeCard-stat {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+.pokeCard-stat-name {
+    margin: 0;
+    color: #9f9f9f;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.pokeCard-stat-value {
+    margin: 0;
+    font-weight: 600;
+}
+/* types styles */
+
+.border-normal {
+    border: 10px solid #735259;
+}
+.border-fighting {
+    border: 10px solid #96482A;
+}
+.border-flying {
+    border: 10px solid #beb14c;
+}
+.border-poison {
+    border: 10px solid #583184;
+}
+.border-ground {
+    border: 10px solid #654808;
+}
+.border-rock {
+    border: 10px solid #7e7e7e;
+}
+.border-bug {
+    border: 10px solid #E52D2D;
+}
+.border-ghost {
+    border: 10px solid #323569;
+}
+.border-steel {
+    border: 10px solid #5e736c;
+}
+.border-fire {
+    border: 10px solid #f96d6f;
+}
+.border-water {
+    border: 10px solid #133258;
+}
+.border-grass {
+    border: 10px solid #7ec3c5;
+}
+.border-electric {
+    border: 10px solid #0c1395;
+}
+.border-psychic {
+    border: 10px solid #e52d2d;
+}
+.border-ice {
+    border: 10px solid #6fbedf;
+}
+.border-dragon {
+    border: 10px solid #478a93;
+}
+.border-dark {
+    border: 10px solid #030706;
+}
+.border-fairy {
+    border: 10px solid #971845;
+}
+.border-unknown {
+    border: 10px solid #696767;
+}
+.border-shadow {
+    border: 10px solid #6c31a3;
 }
