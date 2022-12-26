@@ -16,7 +16,7 @@ const PokemonCard = ({pokemon}) => {
   const types = dataPokemon?.types.map(type => type.type.name).join(" / ")
 
   return (
-    <article className='pokeCard'>
+    <article className={`pokeCard border-${dataPokemon?.types[0].type.name}`}>
       <section className='pokeCard-header'></section>
       <section className='pokecard-content'>
         <img src={dataPokemon?.sprites.other["official-artwork"].front_default} alt="" className='pokeCard-img'/>
