@@ -18,11 +18,11 @@
     position: relative;
 }
 .pokeCard-img {
-    width: 200px;
+    width: 100%;
     position: absolute;
     padding: 10px 20px;
-    top: 0;
-    left: calc(50% - 100px);
+    top: 5px;
+    left: calc(50% - 50%);
     transform: translateY(-85%);
 }
 .pokeCard-name {
@@ -120,4 +120,65 @@
 }
 .border-shadow {
     border: 10px solid #6c31a3;
+}
+/* Background linear gradient */
+.bg-lg-normal {
+    background: linear-gradient(180deg #735259, #000);
+}
+.bg-lg-fighting {
+    background: linear-gradient(180deg, #964024, #000);
+}
+.bg-lg-flying {
+    background: linear-gradient(180deg, #beb14c, #000);
+}
+.bg-lg-poison {
+    background: linear-gradient(180deg, #583184, #000);
+}
+.bg-lg-ground {
+    background: linear-gradient(180deg, #654008, #000);
+}
+.bg-lg-rock {
+    background: linear-gradient(180deg, #7e7e7e, #000);
+}
+.bg-lg-bug {
+    background: linear-gradient(180deg, #e52d2d, #000);
+}
+.bg-lg-ghost {
+    background: linear-gradient(180deg, #323569, #000);
+}
+.bg-lg-steel {
+    background: linear-gradient(180deg, #5e736c, #000);
+}
+.bg-lg-fire {
+    background: linear-gradient(180deg, #f96d6f, #000);
+}
+.bg-lg-water {
+    background: linear-gradient(180deg, #133258, #000);
+}
+.bg-lg-grass {
+    background: linear-gradient(180deg, #7ec6c5, #000);
+}
+.bg-lg-electric {
+    background: linear-gradient(180deg, #0c1395, #000);
+}
+.bg-lg-psychic {
+    background: linear-gradient(180deg, #e52d2d, #000);
+}
+.bg-lg-ice {
+    background: linear-gradient(180deg, #6fbedf, #000);
+}
+.bg-lg-dragon {
+    background: linear-gradient(180deg, #478a93, #000);
+}
+.bg-lg-dark {
+    background: linear-gradient(180deg, #030706, #000);
+}
+.bg-lg-fairy {
+    background: linear-gradient(180deg, #971b45, #000);
+}
+.bg-lg-unknown {
+    background: linear-gradient(180deg, #696767, #000);
+}
+.bg-lg-shadow {
+    background: linear-gradient(180deg, #6c31a3, #000);
 }
