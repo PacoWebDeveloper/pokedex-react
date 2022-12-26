@@ -1,0 +1,72 @@
+.Pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.pokemonId {
+    position: relative;
+    width: min(800px, 100%);
+    text-align: center;
+}
+.pokemonId-header {
+    position: absolute;
+    top: 0;
+    height: 160px;
+    width: 100%;
+    background-color: aquamarine;
+}
+.pokemonId-img {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+}
+.pokemonId-id {
+    font-size: 25px;
+    margin: 10px 0 5px 0;
+}
+.pokemonId-name {
+    margin: 0;
+    text-transform: capitalize;
+}
+.pokemonId-features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.pokemonId-feature {
+    font-size: 12px;
+}
+.pokemonId-feature-name {
+    margin-top: 10px;
+}
+.pokemonId-feature-value {
+    margin-top: 4px;
+    font-weight: bold;
+}
+.pokemonId-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.pokemonId-info-container {
+    width: max(45%, 300px);
+}
+.pokemonId-info-data {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10pz;
+}
+.pokemonId-info-title {
+    margin-bottom: 0;
+}
+.pokemonId-info-value {
+    border: 1px solid #D3D3D3;
+    width: 100%;
+    padding: 4px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 14px;
+}
