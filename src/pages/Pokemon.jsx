@@ -43,7 +43,7 @@ const Pokemon = () => {
             <h4 className='pokemonId-info-title'>Types</h4>
             <div className='pokemonId-info-data'>
               {
-                dataPokemon?.types.map(type => <p className={`pokemonId-info-value bg-${type.type.name}`} key={type.type.name}>{type.type.name}</p>)
+                dataPokemon?.types.map(type => <p className={`pokemonId-info-value bg-lg-${type.type.name}`} key={type.type.url}>{type.type.name}</p>)
               }
             </div>
           </div>

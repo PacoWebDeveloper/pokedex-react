@@ -79,12 +79,16 @@
     font-weight: bold;
     font-size: 14px;
 }
-.pokemonId.stats {
+.pokemonId-stats {
     padding: 0 25px 30px 25px;
 }
 .pokemonId-stats-title {
     text-align: left;
-}.pokemonId-stat-header {
+}
+.pokemonId-stat {
+    margin: 10px 0;
+}
+.pokemonId-stat-header {
     display: flex;
     justify-content: space-between;
 }
