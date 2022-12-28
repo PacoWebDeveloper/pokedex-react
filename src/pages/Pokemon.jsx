@@ -61,7 +61,7 @@ const Pokemon = () => {
           <div className='pokemonId-stats-container'>
             {
               dataPokemon?.stats.map(stat => (
-                <div className="pokemonId-stat" key={stat.name}>
+                <div className="pokemonId-stat" key={stat.stat.url}>
                   <div className='pokemonId-stat-header'>
                     <p className="pokemonId-stat-name">{stat.stat.name}</p>
                     <p className='pokemonId-stat-value'>{stat.base_stat}</p>
